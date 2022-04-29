@@ -1,0 +1,71 @@
+﻿<Window x:Class="Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo"
+        mc:Ignorable="d"
+        Title="Agents" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="search" FontFamily="Monotype Corsiva" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Height="30" Width="270" Text="Введите для поиска" FontSize="25" GotFocus="search_GotFocus" LostFocus="search_LostFocus"/>
+        <ComboBox Grid.Column="2" Grid.ColumnSpan="2" Height="30" Width="130"
+                          x:Name="sort"
+                          SelectedIndex="0"
+                          HorizontalContentAlignment="Center"
+                          VerticalContentAlignment="Center" FontFamily="Monotype Corsiva">
+
+            <TextBlock FontSize="14"
+                               Text="Сортировка" />
+            <TextBlock FontSize="14"
+                               Text="Наименование(по возрастанию)" />
+            <TextBlock FontSize="14"
+                               Text="Наименование(по убыванию)" />
+            <TextBlock FontSize="14"
+                               Text="Приоритетность(по возрастанию)" />
+            <TextBlock FontSize="14"
+                               Text="Приоритетность(по убыванию)" />
+        </ComboBox>
+        <ComboBox Grid.Column="3" Grid.ColumnSpan="2" Height="30" Width="130"
+                          x:Name="filter"
+                          SelectedIndex="0"
+                          HorizontalContentAlignment="Center"
+                          VerticalContentAlignment="Center" FontFamily="Monotype Corsiva">
+
+            <TextBlock FontSize="14"
+                               Text="Фильтр" />
+            <TextBlock FontSize="14"
+                               Text="ЗАО" />
+            <TextBlock FontSize="14"
+                               Text="МКК" />
+            <TextBlock FontSize="14"
+                               Text="МФО" />
+            <TextBlock FontSize="14"
+                               Text="ОАО" />
+            <TextBlock FontSize="14"
+                               Text="ООО" />
+            <TextBlock FontSize="14"
+                               Text="ПАО" />
+        </ComboBox>
+        <ListView x:Name="AgentListView"
+                  Grid.Column="1"
+                  Grid.ColumnSpan="3"
+                  Grid.Row="1"
+                  ScrollViewer.CanContentScroll="False"
+                  Margin="5"
+                  BorderBrush="#46B29D"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        </ListView>
+    </Grid>
+</Window>
